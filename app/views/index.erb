@@ -9,16 +9,17 @@
   %>
   <% if @access_token %>
     <div>
-      <p>
-        <strong>token:</strong> <%= @access_token.token %><br>
-        <strong>secret:</strong> <%= @access_token.secret %><br>
-      </p>
-      <p>
+     <div class="container">
+  <form name="username" action="/users/new" method="POST">
+    <p> Username <input type="text" name ="username"/></p>
+<p>Tweet Something Boss<input type="text" name ="tweet_text"/></p>
+    <p> <input type="submit" value="create_username"/></p>
+        </form>
         <button><a href="/sign_out">Sign Out</a></button>
       </p>
     </div>
   <% else %>
     <button><a href="/sign_in">Sign In with Twitter</a></button>
   <% end %>
-  
+
 </div>
